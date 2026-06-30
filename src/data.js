@@ -73,7 +73,7 @@ export const experience = [
 
 export const projects = [
   {
-    title: 'Lesson Planning System',
+    title: 'Lesson Plan',
     description: 'Structured lesson plans built around Robert Gagne’s instructional model to keep classes clear, measurable, and learner-friendly.',
     tag: 'Teaching',
   },
