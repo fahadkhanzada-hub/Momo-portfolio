@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --bg: #080808;
-  --surface: #0f0f0f;
-  --surface-2: #161616;
-  --border: #222222;
-  --border-hover: #333333;
-  --text: #f2f2f2;
-  --muted: #8a8a8a;
-  --muted-2: #5b5b5b;
-  --accent: #e8ff47;
-  --accent-2: #4fffff;
-  --accent-subtle: #1a1f00;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.06);
+  --bg: #090909;
+  --surface: #111111;
+  --surface-2: #171717;
+  --border: #262626;
+  --border-hover: #373737;
+  --text: #f0f0f0;
+  --muted: #888888;
+  --muted-2: #6a6a6a;
+  --accent: #c7ff38;
+  --accent-2: #79ffd6;
+  --accent-subtle: #171f07;
+  --glass: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.05);
 }
 
 html {
@@ -25,12 +25,10 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(circle at top, rgba(232, 255, 71, 0.08), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(79, 255, 255, 0.08), transparent 20%),
-    var(--bg);
+  background: radial-gradient(circle at top, rgba(199, 255, 56, 0.07), transparent 28%), var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,9 +54,16 @@ a {
 }
 
 .font-display {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
+}
+
+.hero-noise {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(199, 255, 56, 0.09), transparent 25%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05), transparent 20%),
+    radial-gradient(circle at 50% 85%, rgba(121, 255, 214, 0.05), transparent 24%);
 }
