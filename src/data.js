@@ -34,40 +34,40 @@ export const expertise = [
 ]
 
 export const education = [
-  {
+  // {
  
-    // meta: 'CGPA: 3.85',
-  },
-  {
-    title: 'Digital Marketing (SEO)',
-    institution: 'National Skills Development Corporation',
-    meta: 'Professional Training',
-  },
-  {
-    title: 'Intermediate',
-    institution: 'Government Degree College No. 3',
-    meta: 'Medical Group',
-  },
-  {
-    title: 'Matriculation',
-    institution: 'Government Girls No. 2 School Kohat',
-    meta: 'Science Group',
-  },
+  //   // meta: 'CGPA: 3.85',
+  // },
+  // {
+  //   title: 'Digital Marketing (SEO)',
+  //   institution: 'National Skills Development Corporation',
+  //   meta: 'Professional Training',
+  // },
+  // {
+  //   title: 'Intermediate',
+  //   institution: 'Government Degree College No. 3',
+  //   meta: 'Medical Group',
+  // },
+  // {
+  //   title: 'Matriculation',
+  //   institution: 'Government Girls No. 2 School Kohat',
+  //   meta: 'Science Group',
+  // },
 ]
 
 export const experience = [
   {
-    role: 'BS English (Linguievevrstics)',
+    role: 'BS English (Linguistics)',
     company: '',
     period: 'Present',
     summary: 'Kohat University of Science and Technology (KUST)',
   },
-  {
-    role: 'Digital Marketing Intern',
-    company: 'NAVTTC Youth Development Program',
-    period: '2026 – Present',
-    summary: 'Created SEO-friendly content, conducted website and blog audits, and supported keyword research and AI-assisted digital marketing tasks.',
-  },
+  // {
+  //   role: 'Digital Marketing Intern',
+  //   company: 'NAVTTC Youth Development Program',
+  //   period: '2026 – Present',
+  //   summary: 'Created SEO-friendly content, conducted website and blog audits, and supported keyword research and AI-assisted digital marketing tasks.',
+  // },
 ]
 
 export const projects = [
