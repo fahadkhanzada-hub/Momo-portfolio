@@ -16,7 +16,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import { certifications, education, experience, expertise, highlights, languages, profile, projects } from './data'
+import { certifications, education, experience, expertise, highlights, languages, profile, projects, cv } from './data'
 
 const heroPortraitSrc = '/hero-portrait.jpeg'
 const heroFloralSrc = '/hero-floral.jpeg'
@@ -418,7 +418,7 @@ function ContactSection({ onOpenCv }) {
               <GlowButton href="/cv" target="_blank" rel="noreferrer" variant="secondary">Open CV page <ExternalLink size={16} /></GlowButton>
             </div>
             <div className="mt-8 rounded-[1.5rem] bg-[linear-gradient(135deg,rgba(56,189,248,0.12),rgba(186,230,253,0.45))] p-5">
-              <p className="font-display text-[28px] text-text">Available for remote opportunities</p>
+              <p className="font-display text-[28px] text-text">Available for opportunities</p>
               <p className="mt-2 text-[15px] leading-7 text-slate-600">English teaching, educational content, tutoring, SEO, and digital support.</p>
             </div>
           </div>
@@ -453,65 +453,112 @@ function CvViewer({ onClose }) {
           </button>
         </div>
 
-        <div className="grid gap-0 lg:grid-cols-[0.88fr_1.12fr]">
-          <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r md:p-8">
-            <div className="rounded-[1.5rem] hero-gradient p-[1px] shadow-[0_12px_28px_rgba(56,189,248,0.18)]">
-              <div className="rounded-[calc(1.5rem-1px)] bg-white p-5">
-                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">Summary</p>
-                <p className="mt-3 text-[15px] leading-7 text-slate-700">{profile.summary}</p>
+        <div className="grid gap-0 lg:grid-cols-[1fr_1fr]">
+          <section className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r md:p-8">
+            <div className="text-center">
+              <p className="font-display text-[26px] tracking-[0.06em] text-slate-600">SUMMARY</p>
+              <div className="mx-auto mt-3 h-px w-40 bg-slate-400" />
+            </div>
+            <p className="mt-6 text-[14px] leading-6 text-slate-700">{cv.summary}</p>
+
+            <div className="mt-8">
+              <p className="font-display text-[20px] tracking-[0.08em] text-slate-600">EDUCATION</p>
+              <div className="mt-2 h-px w-36 bg-slate-400" />
+
+              <div className="mt-5 space-y-5 text-[13px] leading-6 text-slate-700">
+                {cv.education.map((group) => (
+                  <div key={group.heading}>
+                    <p className="font-semibold text-slate-700">{group.heading}</p>
+                    <div className="mt-2 space-y-3">
+                      {group.items.map((item) => (
+                        <div key={item.title}>
+                          <p className="font-semibold text-slate-700">{item.title}</p>
+                          <p className="text-slate-600">{item.subtitle}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="mt-5 space-y-2 text-[15px] text-slate-600">
-              <p className="inline-flex items-center gap-2"><MapPin size={15} /> {profile.location}</p>
-              <p className="inline-flex items-center gap-2"><Phone size={15} /> {profile.phone}</p>
-              <p className="inline-flex items-center gap-2"><Mail size={15} /> {profile.email}</p>
-            </div>
-            <div className="mt-5 rounded-[1.5rem] bg-slate-50 p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">Languages</p>
-              <p className="mt-3 text-[15px] text-slate-700">{languages.join(' · ')}</p>
-            </div>
-          </aside>
 
-          <main className="p-6 md:p-8">
-            <div className="space-y-8">
-              <section>
-                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">Experience</p>
-                <div className="mt-4 space-y-4">
-                  {experience.map((item) => (
-                    <div key={item.role} className="rounded-[1.25rem] border border-slate-200 bg-slate-50 p-5">
-                      <h3 className="font-display text-[26px] text-text">{item.role}</h3>
-                      <p className="mt-1 text-[14px] text-slate-500">{item.company} · {item.period}</p>
-                      <p className="mt-2 text-[15px] leading-7 text-slate-700">{item.summary}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">Education</p>
-                <div className="mt-4 space-y-4">
-                  {education.map((item) => (
-                    <div key={item.title} className="rounded-[1.25rem] border border-slate-200 bg-slate-50 p-5">
-                      <h3 className="font-display text-[22px] text-text">{item.title}</h3>
-                      <p className="mt-1 text-[14px] text-slate-500">{item.institution}</p>
-                      <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-accent">{item.meta}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">Certifications</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {certifications.map((item) => (
-                    <span key={item} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[12px] text-slate-600">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </section>
+            <div className="mt-8">
+              <p className="font-display text-[20px] tracking-[0.08em] text-slate-600">SKILLS</p>
+              <div className="mt-2 h-px w-24 bg-slate-400" />
+              <ul className="mt-5 list-disc space-y-1 pl-5 text-[13px] leading-5 text-slate-700">
+                {cv.skills.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
             </div>
-          </main>
+
+            <div className="mt-8">
+              <p className="font-display text-[20px] tracking-[0.08em] text-slate-600">CERTIFICATIONS</p>
+              <div className="mt-2 h-px w-40 bg-slate-400" />
+              <ul className="mt-5 list-disc space-y-1 pl-5 text-[13px] leading-5 text-slate-700">
+                {cv.certifications.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8">
+              <p className="font-display text-[20px] tracking-[0.08em] text-slate-600">LANGUAGES</p>
+              <div className="mt-2 h-px w-36 bg-slate-400" />
+              <p className="mt-4 text-[13px] tracking-[0.2em] text-slate-700">{cv.languages.join(' | ')}</p>
+            </div>
+          </section>
+
+          <section className="p-6 md:p-8">
+            <p className="font-display text-[20px] tracking-[0.08em] text-slate-600">WORK EXPERIENCE</p>
+            <div className="mt-2 h-px w-52 bg-slate-400" />
+
+            <div className="mt-5 space-y-6 text-[13px] leading-6 text-slate-700">
+              {cv.workExperience.map((item) => (
+                <div key={item.title}>
+                  <p className="font-semibold text-slate-700">{item.title}</p>
+                  <p className="text-slate-600">{item.subtitle}</p>
+                  {item.role ? <p className="mt-1 text-slate-600">{item.role}</p> : null}
+                  <ul className="mt-3 list-disc space-y-1 pl-5">
+                    {item.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <p className="font-display text-[20px] tracking-[0.08em] text-slate-600">PROJECTS</p>
+              <div className="mt-2 h-px w-28 bg-slate-400" />
+              <div className="mt-5 space-y-4 text-[13px] leading-6 text-slate-700">
+                {cv.projects.map((item) => (
+                  <div key={item.title}>
+                    <p className="font-semibold text-slate-700">• {item.title}</p>
+                    <p className="pl-4 text-slate-600">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-slate-200 pt-5 text-[13px] text-slate-700">
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <p className="font-semibold uppercase tracking-[0.08em] text-slate-600">PORTFOLIO (CLICK OR SCAN)</p>
+                  <p className="mt-1">View Documents Portfolio or Scan QR Code</p>
+                </div>
+                <figure className="shrink-0 rounded-[0.9rem] border border-slate-200 bg-white p-2 shadow-[0_8px_20px_rgba(15,23,42,0.08)]">
+                  <img
+                    src="/portfolio-qr.svg"
+                    alt="QR code linking to the portfolio"
+                    className="block h-[110px] w-[110px] object-contain"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>

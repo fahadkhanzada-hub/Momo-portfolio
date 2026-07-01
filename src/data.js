@@ -111,3 +111,106 @@ export const certifications = [
 ]
 
 export const languages = ['English', 'Urdu', 'Pashto']
+
+export const cv = {
+  summary:
+    'English graduate with a strong command of the language and a background in medical science. Certified in digital marketing, MS Office and Teaching English (TESOL), with experience in communication and outreach. Passionate about teaching and committed to supporting student growth in a positive learning environment.',
+  education: [
+    {
+      heading: 'University and Training',
+      items: [
+        {
+          title: 'BS English (Linguistics)',
+          subtitle: 'Kohat University of Science and Technology KUST (CGPA: 3.85)',
+        },
+        {
+          title: 'Digital Marketing (SEO)',
+          subtitle: 'National Skills Development Corporation',
+        },
+      ],
+    },
+    {
+      heading: 'Intermediate and Matriculation',
+      items: [
+        {
+          title: 'Intermediate (FA/FSc)',
+          subtitle: 'Government Degree College No. 3 (MEDICAL)',
+        },
+        {
+          title: 'Matric',
+          subtitle: 'Government Girls No. 2 School Kohat (SCIENCE)',
+        },
+      ],
+    },
+  ],
+  skills: [
+    'English language teaching',
+    'Classroom management',
+    'Lesson designs',
+    'SEO (search engine optimization)',
+    'Content Writing and Sales Marketing',
+    'Communication skills',
+    'Reels & Short Video Editing',
+    'AI- tools for education',
+    'Educational Blogging',
+    'Canva Graphic designs',
+    'Student EngagementT',
+    'Microsoft office',
+  ],
+  certifications: [
+    'TESOL (Teaching English to Speakers of Other Languages)',
+    'Digital marketing SEO',
+    'MS word Office',
+    'ChatGPT Prompt Engineering for Developers',
+    'Fundamentals of Leadership',
+  ],
+  workExperience: [
+    {
+      title: 'ENGLISH TUTOR',
+      subtitle: 'Self-Employed | (Year-Present)',
+      bullets: [
+        'Taught English to school-level students through one-to-one tutoring.',
+        'Prepared lessons according to students\' learning needs.',
+        'Improved students\' grammar, vocabulary, reading, and writing skills.',
+        'Monitored student progress and provided feedback.',
+      ],
+    },
+    {
+      title: 'NAVTTC MARKETING INTERN',
+      subtitle: 'Youth development program by Navttc | 2026– Present',
+      role: 'Digital Marketing & SEO Trainee | National Vocational and Technical Training Commission (NAVTTC Program)',
+      bullets: [
+        'Created SEO-friendly content.',
+        'Assisted with website and blog audits.',
+        'Worked on digital marketing projects using AI and online tools.',
+      ],
+    },
+  ],
+  projects: [
+    {
+      title: 'Lesson plan',
+      description: 'Designed lesson plans using Robert Gagne’s instructional model.',
+    },
+    {
+      title: 'English teaching materials',
+      description: 'Designed worksheets and formative and summative assessment activities.',
+    },
+    {
+      title: 'Website Audit',
+      description: 'Performed SEO audit.',
+    },
+    {
+      title: 'Blog Audit & Content Creation',
+      description: 'Audited personal blog and optimized content using SEO techniques with reccomandet issues',
+    },
+    {
+      title: 'YouTube Channel Audit (Sneakers Niche)',
+      description: 'Analyzed channel SEO including titles, tags, and descriptions with reccomandet issues',
+    },
+    {
+      title: 'AI Animation for Blog Content',
+      description: 'Created simple AI-based animations for engagement',
+    },
+  ],
+  languages: ['ENGLISH', 'URDU', 'PASHTO'],
+}
