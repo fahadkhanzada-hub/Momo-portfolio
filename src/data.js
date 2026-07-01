@@ -19,12 +19,12 @@ export const expertise = [
   {
     title: 'English Teaching',
     icon: 'book',
-    items: ['English Language Teaching', 'TESOL Methodologies', 'Grammar & Vocabulary', 'Reading & Writing Skills', 'Lesson Planning', 'Student Assessment'],
+    items: ['Reaearch Methodology ', 'Data Analysis', 'Sampling Methods & Population ', 'Academic Writing', 'Proposals Writing', 'Zotero'],
   },
   {
     title: 'Digital Marketing',
     icon: 'search',
-    items: ['Search Engine Optimization', 'Website Audit', 'Blog Audit', 'Content Writing', 'Keyword Research', 'AI-assisted optimization'],
+    items: ['Nvivo And Atlas.ti ', 'Qualtrics','SPSS/R ', 'Blog Audit', 'Content Writing', 'Keyword Research', 'AI-assisted optimization'],
   },
   {
     title: 'Educational Technology',
@@ -35,9 +35,8 @@ export const expertise = [
 
 export const education = [
   {
-    title: 'BS English (Linguistics)',
-    institution: 'Kohat University of Science and Technology (KUST)',
-    meta: 'CGPA: 3.85',
+ 
+    // meta: 'CGPA: 3.85',
   },
   {
     title: 'Digital Marketing (SEO)',
@@ -58,10 +57,10 @@ export const education = [
 
 export const experience = [
   {
-    role: 'English Tutor',
-    company: 'Self-Employed',
+    role: 'BS English (Linguievevrstics)',
+    company: '',
     period: 'Present',
-    summary: 'Taught English to school students through one-to-one sessions, developing customized lesson plans and tracking progress with regular feedback.',
+    summary: 'Kohat University of Science and Technology (KUST)',
   },
   {
     role: 'Digital Marketing Intern',
@@ -109,7 +108,6 @@ export const certifications = [
   'Digital Marketing (SEO)',
   'Microsoft Office',
   'ChatGPT Prompt Engineering for Developers',
-  'Fundamentals of Leadership',
 ]
 
 export const languages = ['English', 'Urdu', 'Pashto']

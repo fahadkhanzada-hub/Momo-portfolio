@@ -3,19 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --bg: #090909;
-  --surface: #111111;
-  --surface-2: #171717;
-  --border: #262626;
-  --border-hover: #373737;
-  --text: #f0f0f0;
-  --muted: #888888;
-  --muted-2: #6a6a6a;
-  --accent: #c7ff38;
-  --accent-2: #79ffd6;
-  --accent-subtle: #171f07;
-  --glass: rgba(255, 255, 255, 0.02);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --border: #e5e7eb;
+  --border-hover: #cbd5e1;
+  --text: #0f172a;
+  --muted: #475569;
+  --muted-2: #64748b;
+  --accent: #38bdf8;
+  --accent-2: #60a5fa;
+  --accent-subtle: #bae6fd;
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(56, 189, 248, 0.15);
+  --shadow-color: rgba(15, 23, 42, 0.12);
 }
 
 html {
@@ -25,10 +26,12 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: radial-gradient(circle at top, rgba(199, 255, 56, 0.07), transparent 28%), var(--bg);
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   color: var(--text);
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,7 +42,7 @@ body {
 }
 
 ::selection {
-  background: rgba(232, 255, 71, 0.2);
+  background: rgba(56, 189, 248, 0.25);
   color: var(--text);
 }
 
@@ -54,7 +57,9 @@ a {
 }
 
 .font-display {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', 'DM Sans', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .font-mono {
@@ -63,7 +68,112 @@ a {
 
 .hero-noise {
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(199, 255, 56, 0.09), transparent 25%),
-    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.05), transparent 20%),
-    radial-gradient(circle at 50% 85%, rgba(121, 255, 214, 0.05), transparent 24%);
+    radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.14), transparent 26%),
+    radial-gradient(circle at 82% 18%, rgba(96, 165, 250, 0.10), transparent 22%),
+    radial-gradient(circle at 50% 85%, rgba(186, 230, 253, 0.32), transparent 26%);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #bae6fd 100%);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 18px 40px var(--shadow-color);
+}
+
+.section-surface {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 250, 252, 0.88));
+}
+
+/* ===================== SCROLL REVEAL (fadeInUp) ===================== */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+}
+
+.reveal:not(.is-visible) {
+  animation-play-state: paused !important;
+}
+
+/* ===================== LOADER ===================== */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: var(--bg);
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.loader-overlay.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-counter {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(48px, 8vw, 84px);
+  line-height: 1;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  letter-spacing: -0.02em;
+}
+
+.loader-counter span.unit {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.32em;
+  color: var(--accent);
+  margin-left: 4px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.loader-track {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+  transition: width 0.15s linear;
+}
+
+.loader-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+@keyframes loader-bar-slide {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(280%);
+  }
 }
